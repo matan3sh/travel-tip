@@ -27,8 +27,8 @@ function renderLocationsTable(location) {
     <td class="location-name">${fullName}</td>
     <td class="${cityName}"></td>
     <td>
-    <button data-trans="book-update-btn btn-sm" class="btn btn-warning">Update</button>
-    <button data-trans="book-delete-btn btn-sm" class="btn btn-danger delete-btn">Delete</button>
+    <button data-trans="book-update-btn btn-sm" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+    <button data-trans="book-delete-btn btn-sm" class="btn btn-danger delete-btn"><i class="fas fa-trash"></i></button>
     </td>
     `;
   elLocationTable.appendChild(locationRow);
