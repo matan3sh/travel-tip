@@ -27,8 +27,8 @@ function renderLocationsTable(location) {
     <td class="location-name">${fullName}</td>
     <td class="${cityName}"></td>
     <td>
-    <button data-trans="book-update-btn btn-sm" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-    <button data-trans="book-delete-btn btn-sm" class="btn btn-danger delete-btn"><i class="fas fa-trash"></i></button>
+    <button class="btn btn-warning">Update</button>
+    <button class="btn btn-danger delete">Delete</button>
     </td>
     `;
   elLocationTable.appendChild(locationRow);
@@ -44,12 +44,10 @@ function renderWeatherTable(locationWeather) {
   let strHTML = `<img src="img/${icon}.png" class="weather-img"></img>
                 <span class="weather-desc">${desc}</span>
     `;
-  console.log(locationName);
   document.querySelector(`.${locationName}`).innerHTML = strHTML;
 }
 
 function renderWeather(weather) {
-  console.log(weather.locationName);
   const {
     locationName,
     desc,
@@ -71,10 +69,7 @@ function renderWeather(weather) {
   storageService.saveToStorage('weather', weather);
 }
 
-setTimeout(() => {
-  document.querySelector('.delete-btn').addEventListener('click', (e) => {
-    let deleteEl = e.target;
-    deleteEl.parentElement.parentElement.remove();
-    localStorage.clear();
-  });
-}, 1000);
+document.querySelector('.locations-list').addEventListener('click', (e) => {
+  console.log(e.target);
+  locationService.deleteLocation(e.target);
+});

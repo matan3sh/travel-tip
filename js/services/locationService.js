@@ -2,6 +2,7 @@ import { utilService } from './utilService.js';
 export const locationService = {
   getGeoCodeBySearch,
   initMap,
+  deleteLocation,
 };
 
 function initMap(coords) {
@@ -43,4 +44,11 @@ function getGeoCodeBySearch(searchValue) {
     return { id: utilService.makeId(), cityName, fullName, coords };
   });
   return prmData;
+}
+
+function deleteLocation(el) {
+  if (el.classList.contains('delete')) {
+    el.parentElement.parentElement.remove();
+    localStorage.clear();
+  }
 }
