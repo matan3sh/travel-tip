@@ -27,7 +27,7 @@ function renderLocationsTable(location) {
     <td class="location-name">${fullName}</td>
     <td class="${cityName}"></td>
     <td>
-    <button class="btn btn-warning action-btn ">Update</button>
+    <button class="btn btn-warning action-btn">Update</button>
     <button class="btn btn-danger delete action-btn">Delete</button>
     </td>
     `;
